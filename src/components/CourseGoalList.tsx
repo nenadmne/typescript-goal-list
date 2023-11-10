@@ -10,6 +10,7 @@ export default function CourseGoalList({
   goals,
   onDelete,
 }: CourseGoalsListProps) {
+    
   return (
     <ul>
       {goals.map((item) => (
