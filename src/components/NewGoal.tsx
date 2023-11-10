@@ -1,7 +1,7 @@
 import { useRef, type FormEvent } from "react";
 
 type NewGoalProps = {
-  onAdd: (goal: string, description: string) => void;
+  onAdd: (goal: string, summary: string) => void;
 };
 
 export default function NewGoal({ onAdd }: NewGoalProps) {
@@ -12,12 +12,13 @@ export default function NewGoal({ onAdd }: NewGoalProps) {
     event.preventDefault();
 
     const enteredGoal = goal.current!.value;
-    const enteredSummary = goal.current!.value;
+    const enteredSummary = summary.current!.value;
 
     event.currentTarget.reset();
     onAdd(enteredGoal, enteredSummary);
-  };
 
+    console.log(enteredGoal, enteredSummary)
+  };
   return (
     <form onSubmit={submitHandler}>
       <p>
